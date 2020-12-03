@@ -1,1 +1,19 @@
-<p>login works!</p>
+<div class="alert alert-danger" *ngIf="registrationFailed"> {{error}} </div>
+
+<form [formGroup]="form">
+  <div class="form-group">
+    <label>Email</label>
+    <input class="form-control"
+           type="email"
+           formControlName="email"
+           placeholder="email@email.fr">
+  </div>
+
+  <div class="form-group">
+    <label>Password</label>
+    <input class="form-control"
+           type="password"
+           formControlName="password">
+  </div>
+  <button class="btn btn-primary" [disabled]="form.invalid" (click)="login()">Log me in!</button>
+</form>

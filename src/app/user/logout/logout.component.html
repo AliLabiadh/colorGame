@@ -1,1 +1,7 @@
-<p>logout works!</p>
+<div *ngIf="!loading">
+  Voulez vous vraiment vous déconnecter ?
+  <button class="btn btn-primary" (click)="logout()" >Oui</button>
+</div>
+<app-loading [loading]="loading" *ngIf="loading">
+</app-loading>
+
