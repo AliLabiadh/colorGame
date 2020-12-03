@@ -20,13 +20,12 @@ export class NewComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.drawGrid(0);
+    this.drawGrid(this.form.value.rows, this.form.value.cols);
   }
 
-  drawGrid(test: number): void{
+  drawGrid(rows: number, cols: number): void{
     this.table = [1][1];
     this.table = [this.form.value.rows] [this.form.value.cols];
-    console.log(this.table);
-    console.log(test);
+    console.log(rows, cols);
   }
 }
