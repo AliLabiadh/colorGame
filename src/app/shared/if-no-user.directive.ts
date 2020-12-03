@@ -16,7 +16,7 @@ export class IfNoUserDirective implements OnInit, OnDestroy{
 
   protected update(user: User | null): void{
     this.userService.user$.subscribe(userData => {
-      if (!userData){
+      if (userData){
         this.dNone = 'd-none';
       }});
   }

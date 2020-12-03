@@ -1,11 +1,11 @@
 <form [formGroup]="form">
   <div class="form-group">
     Rows
-    <input type="number" formControlName="rows">
+    <input type="number" formControlName="rows" (ngModelChange)="drawGrid($event)">
   </div>
 
   <div class="form-group">
     Cols
-    <input type="number" formControlName="cols">
+    <input type="number" formControlName="cols" (ngModelChange)="drawGrid($event)">
   </div>
 </form>
