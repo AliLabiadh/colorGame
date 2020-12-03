@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-new',
@@ -7,9 +8,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewComponent implements OnInit {
 
-  constructor() { }
+  table = [1][1];
+  form: FormGroup;
+  constructor(private fb: FormBuilder) {
+    const {required, min} = Validators;
 
-  ngOnInit(): void {
+    this.form = this.fb.group({
+      rows: [3, [required, min(1)]],
+      cols: [6, [required, min(1)]]
+    });
   }
 
+  ngOnInit(): void {
+    this.drawGrid();
+  }
+
+  drawGrid(): void{
+    this.table = [1][1];
+    this.table = [this.form.value.rows] [this.form.value.cols];
+    console.log(this.table);
+  }
 }

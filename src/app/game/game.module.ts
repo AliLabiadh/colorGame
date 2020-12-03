@@ -6,10 +6,11 @@ import {RouterModule} from '@angular/router';
 import {SharedModule} from '../shared/shared.module';
 import {GAME_ROUTES} from './game.routes';
 import {UserModule} from '../user/user.module';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
-  imports: [CommonModule, RouterModule.forChild(GAME_ROUTES), SharedModule, UserModule],
+  imports: [CommonModule, RouterModule.forChild(GAME_ROUTES), SharedModule, UserModule, FormsModule, ReactiveFormsModule],
   declarations: [CaseComponent, NewComponent],
-  exports: [CaseComponent, NewComponent]
+  exports: []
 })
 export class GameModule {}
